@@ -1,0 +1,125 @@
+{% load static %}
+{% block title %}{% endblock %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+<nav class="navbar navbar-expand-md bg-light navbar-light ">
+    <div class="container">
+        <h3 class="navbar-brand text-uppercase fw-bold">
+            <span class="bg-primary bg-gradient p-1 rounded-3 text-light">Ideal</span>App
+        </h3>
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="">Infos site</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+{% block content %}
+</div>
+<div class="h4 pb-2 mb-4 text-primary border-bottom border-primary">
+  <div class="row d-flex justify-content-center">
+    <!--Grid column-->
+    
+    <div class="col-auto">
+      <h5 class="pt-2">
+        <strong>Création du compte</strong>
+      </h5>
+    </div>
+  </div>
+</div> 
+<div class="row d-flex justify-content-center">
+  <!--Grid column-->
+  <div class="col-auto">
+    <form method="post" role="form" enctype="multipart/form-data">{% csrf_token %}
+
+      <div class="form-group">
+          <label for="exampleInputName">Nom d'utilisateur</label>
+          <input required name="nomUtilisateur" class="form-control" id="" type="text"
+                 aria-describedby="nameHelp" placeholder="Entrer votre nom ">
+
+      </div>
+
+      <div class="form-group">
+          <div class="form-row">
+              <div class="col-md-6">
+                  <label for="exampleInputName">Post_Nom</label>
+
+                  <input required name="postnom" class="form-control" id="" type="text"
+                         aria-describedby="nameHelp" placeholder="Entrer votre postnom">
+              </div>
+              <div class="col-md-6">
+                  <label for="exampleInputLastName">Prénom</label>
+
+                  <input required name="prenom" class="form-control" id="" type="text"
+                         aria-describedby="nameHelp" placeholder="Entrer votre prénom">
+              </div>
+          </div>
+      </div>
+
+
+      <div class="form-group">
+          <label for="exampleInputEmail1">Adresse email</label>
+          <input required name="email" class="form-control" id="exampleInputEmail1" type="email"
+                 aria-describedby="emailHelp"
+                 placeholder="Entrer votre adresse email">
+      </div>
+
+
+      <div class="form-group">
+          <div class="form-row">
+              <div class="col-md-6">
+                  <label for="exampleInputPassword1">Mot de passe</label>
+
+                  <input required name="motDePasse" class="form-control" id="exampleInputPassword1"
+                         type="password"
+                         placeholder="Mot de passe">
+              </div>
+
+              <div class="col-md-6">
+                  <label for="exampleConfirmPassword">Confirme mot de passe</label>
+
+                  <input required name="confirmeMotDePasse" class="form-control"
+                         id="exampleConfirmPassword"
+                         type="password"
+                         placeholder="Confirmer votre mot de passe">
+              </div>
+          </div>
+      </div>
+
+      <div class="form-group">
+
+          {% if messages %}
+              <ul>
+                  {% for message in messages %}
+
+                      <li
+                              {% if message.tags %}
+                                  class="{{ message.tags }}"
+                              {% endif %}>
+                          {{ message }}
+                      </li>
+                  {% endfor %}
+              </ul>
+          {% endif %}
+        </div>
+
+
+        <button type="submit" class="btn btn-primary btn-block">Enregistrer</button>
+
+    </form>
+
+
+    <div class="text-center">
+        <a class="d-block small mt-3" href="{% url 'login' %}">Page de connexion</a>
+        <a class="d-block small" href="{% url 'password_reset' %}">Mot de passe perdu ?</a>
+        <hr>
+        <a class="d-block small mt-3" href="{% url 'home' %}"> Page d'accueil</a>
+
+    </div>
+</div>
+</div>
+</div>
+
+
+{% endblock %}
