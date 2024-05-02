@@ -28,6 +28,9 @@ class Etudiant(models.Model):
 
     telephone = models.CharField(max_length=256, blank=True, null=True)
 
+    def __str__(self) -> str:
+        return self.postnom +" "+  self.prenom
+
 class TP(models.Model):
     Séléctionner_Votre_travail = models.FileField(upload_to='PDF')
 
@@ -37,6 +40,8 @@ class L1lmdjour(models.Model):
     Prenom = models.CharField(max_length=60)
     Promotion = models.CharField(max_length=60)
     Séléctionner_Votre_travail = models.FileField(upload_to='PDF')
+    def __str__(self) -> str:
+        return self.Nom +" "+  self.Postnom +" "+  self.Prenom +" "+  self.Promotion
 
 class L1lmdsoir(models.Model):
     Nom = models.CharField(max_length=60)

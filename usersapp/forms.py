@@ -1,8 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-
-from usersapp.models import TP , L1lmdjour
+from usersapp.models import *
 
 
 class UserRegistrationForm(UserCreationForm):
@@ -23,3 +22,29 @@ class Forml1lmdjour(forms.ModelForm):
     class Meta:
         model = L1lmdjour 
         exclude = ('fiends',)
+        
+class Forml1lmdsoir(forms.ModelForm):
+    class Meta:
+        model = L1lmdsoir 
+        exclude = ('fiends',)
+        
+class Forml2lmdjour(forms.ModelForm):
+    class Meta:
+        model = L1lmdjour 
+        exclude = ('fiends',)
+        
+class Forml2lmdsoir(forms.ModelForm):
+    class Meta:
+        model = L1lmdsoir 
+        exclude = ('fiends',)
+class Forml3lmdjour(forms.ModelForm):
+    class Meta:
+        model = L1lmdjour 
+        exclude = ('fiends',)
+        
+class Forml3lmdsoir(forms.ModelForm):
+    class Meta:
+        model = L1lmdsoir 
+        exclude = ('fiends',)
+
+

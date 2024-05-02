@@ -6,10 +6,10 @@ urlpatterns =[
 	
 	path('', views.login , name='login'),
     path('logout/', views.logout_account, name='logout_account'),
-	path('password_reset/', auth_views.PasswordResetView.as_view(template_name='registration/password_reset.html'), name = 'password_reset'),
-	path('password_reset/done/', auth_views.PasswordResetDoneView.as_view(template_name='registration/password_reset_done.html'), name='password_reset_done'),
+	path('reset_password/', auth_views.PasswordResetView.as_view(template_name='registration/password_reset.html'), name = 'reset_password'),
+	path('reset_password_send/', auth_views.PasswordResetDoneView.as_view(template_name='registration/password_reset_done.html'), name='password_reset_done'),
 	path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='registration/password_reset_confirm.html'), name='password_reset_confirm'),
-    path('reset/done/', auth_views.PasswordResetCompleteView.as_view(template_name='registration/password_reset_complete.html'), name='password_reset_complete'),
+    path('reset_password_complete/', auth_views.PasswordResetCompleteView.as_view(template_name='registration/password_reset_complete.html'), name='password_reset_complete'),
     path('register/', views.register_account, name = 'register_account'),
     path('pdf/',views.pdf, name='pdf'),
 	path('envoistp/',views.envoistp, name='envoistp'),

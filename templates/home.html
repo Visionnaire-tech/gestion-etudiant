@@ -5,8 +5,8 @@
 {% block content %}
   <section id="showcase">
     <div class="container">
-      <h1><h1 class="fw-bold">Bienvenue dans <span>IdéalApp</span> {{ user.last_name }} {{ user.first_name }}  {{ user.first }} </h1></h1>
-      <p><strong>Meilleur façon d'apprendre <br> Controle en ligne , Téléchargement support et receuils des exercices</strong> </p></p>
+      <h1 class="fw-bold">Bienvenue dans <span>IdéalApp</span> {{ user.last_name }} {{ user.first_name }}  {{ user.first }} </h1>
+      <p><strong>Meilleur façon d'apprendre <br> Controle en ligne , Téléchargement support et receuils des exercices</strong> </p>
     </div>
   </section>
   <section id="newsletter">
@@ -36,10 +36,10 @@
       <div class="card-body">
         <h5 class="card-title">Envois travail</h5>
         <p class="card-text"> transférez vos traveaux en verifiant avant de l'envoyer</p>
-        <a href="{% url 'envoistp' %}" class="btn btn-primary">Cliquez pour envoyer</a>
+        <a href="{% url 'envoistp' %}" class="btn button_1">Cliquez pour envoyer</a>
       </div>
     </div><br>
-    <div class="h4 pb-2 mb-4 text-primary border-bottom border-primary">
+    <div class="h4 pb-2 mb-4 text-dark border-bottom border-dark">
       <div class="row d-flex justify-content-center">
         <!--Grid column-->
         
@@ -59,7 +59,7 @@
           <img src="{% static 'assets/img/4.jpg' %}">
           <h3>Python-3</h3>
           <p>Téléchargez la nouvelle version du python gratuitement pour la création de vos Applications.</p>
-          <a href="https://www.python.org/ftp/python/3.12.3/python-3.12.3-amd64.exe" class="btn btn-primary" >Télécharger</a>
+          <a href="https://www.python.org/ftp/python/3.12.3/python-3.12.3-amd64.exe" class="btn button_1" >Télécharger</a>
         </div>
         <div class="box">
           <img src="{% static 'assets/img/wamp.png' %}">
@@ -70,7 +70,7 @@
           <br>
 
           <p>Téléchargez la nouvelle version du python gratuitement pour la création de vos bases de données.</p>
-          <a href="https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/wampserver3.3.2_x64.exe/download" class="btn btn-primary" >Télécharger</a>
+          <a href="https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/wampserver3.3.2_x64.exe/download" class="btn button_1" >Télécharger</a>
         </div>
         <div class="box">
           <img src="{% static 'assets/img/pyc.jpeg' %}">
@@ -81,7 +81,7 @@
           <br>
 
           <p>Téléchargez Une environnement puissante et idéal de python gratuitement pour la réalisation de vos projet.</p>
-          <a href="https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/wampserver3.3.2_x64.exe/download" class="btn btn-primary" >Télécharger</a>
+          <a href="https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/wampserver3.3.2_x64.exe/download" class="btn button_1" >Télécharger</a>
         </div>
         
       </div>
@@ -90,223 +90,6 @@
   </div>
 
 </div>
-<style>
-  body{
-  font: 15px/1.5 Arial, Helvetica,sans-serif;
-  padding:0;
-  margin:0;
-  background-color:#f4f4f4;
-}
-
-/* Global */
-.container{
-  width:80%;
-  margin:auto;
-  overflow:hidden;
-}
-
-ul{
-  margin:0;
-  padding:0;
-}
-
-.button_1{
-  height:38px;
-  background:#e8491d;
-  border:0;
-  padding-left: 20px;
-  padding-right:20px;
-  color:#ffffff;
-}
-
-.dark{
-  padding:15px;
-  background:#35424a;
-  color:#ffffff;
-  margin-top:10px;
-  margin-bottom:10px;
-}
-
-/* Header **/
-header{
-  background:#35424a;
-  color:#ffffff;
-  padding-top:30px;
-  min-height:70px;
-  border-bottom:#e8491d 3px solid;
-}
-
-header a{
-  color:#ffffff;
-  text-decoration:none;
-  text-transform: uppercase;
-  font-size:16px;
-}
-
-header li{
-  float:left;
-  display:inline;
-  padding: 0 20px 0 20px;
-}
-
-header #branding{
-  float:left;
-}
-
-header #branding h1{
-  margin:0;
-}
-
-header nav{
-  float:right;
-  margin-top:10px;
-}
-
-header .highlight, header .current a{
-  color:#e8491d;
-  font-weight:bold;
-}
-
-header a:hover{
-  color:#cccccc;
-  font-weight:bold;
-}
-
-/* Showcase */
-#showcase{
-  min-height:400px;
-  background:url('{% static "assets/img/showcase.jpg" %}') no-repeat;
-  background-position: center;
-  background-size: cover;
-  text-align:center;
-  color:#ffffff;
-}
-
-#showcase h1{
-  margin-top:100px;
-  font-size:55px;
-  margin-bottom:10px;
-}
-
-#showcase p{
-  font-size:20px;
-}
-
-/* Newsletter */
-#newsletter{
-  padding:15px;
-  color:#ffffff;
-  background:#35424a
-}
-
-#newsletter h1{
-  float:left;
-}
-
-#newsletter form {
-  float:right;
-  margin-top:15px;
-}
-
-#newsletter input[type="email"]{
-  padding:4px;
-  height:25px;
-  width:250px;
-}
-
-/* Boxes */
-#boxes{
-  margin-top:20px;
-}
-
-#boxes .box{
-  float:left;
-  text-align: center;
-  width:30%;
-  padding:10px;
-}
-
-#boxes .box img{
-  width:90px;
-}
-
-/* Sidebar */
-aside#sidebar{
-  float:right;
-  width:30%;
-  margin-top:10px;
-}
-
-aside#sidebar .quote input, aside#sidebar .quote textarea{
-  width:90%;
-  padding:5px;
-}
-
-/* Main-col */
-article#main-col{
-  float:left;
-  width:65%;
-}
-
-/* Services */
-ul#services li{
-  list-style: none;
-  padding:20px;
-  border: #cccccc solid 1px;
-  margin-bottom:5px;
-  background:#e6e6e6;
-}
-
-footer{
-  padding:20px;
-  margin-top:20px;
-  color:#ffffff;
-  background-color:#e8491d;
-  text-align: center;
-}
-
-/* Media Queries */
-@media(max-width: 768px){
-  header #branding,
-  header nav,
-  header nav li,
-  #newsletter h1,
-  #newsletter form,
-  #boxes .box,
-  article#main-col,
-  aside#sidebar{
-    float:none;
-    text-align:center;
-    width:100%;
-  }
-
-  header{
-    padding-bottom:20px;
-  }
-
-  #showcase h1{
-    margin-top:40px;
-  }
-
-  #newsletter button, .quote button{
-    display:block;
-    width:100%;
-  }
-
-  #newsletter form input[type="email"], .quote input, .quote textarea{
-    width:100%;
-    margin-bottom:5px;
-  }
-}
-
-</style>
-
-{% endblock %}
-{% block test %}
-
-{% endblock %}
-
-{% block footer %}
 
 {% endblock %}
 

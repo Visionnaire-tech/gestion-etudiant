@@ -1,0 +1,79 @@
+{% extends "acc.html" %}
+{% load static %}
+{% block title %}Acceuil{% endblock %}
+{% block bodyId %} | Acceuil {% endblock %}
+{% block content %}
+    <section id="main">
+      <div class="container">
+        <article id="main-col">
+          <h1 class="page-title">Exercices</h1>
+          <ul id="services">
+            <li>
+	{% if notes %}
+    {% for note in notes %}
+        <article class="media content-section">
+            <div class="media-body">
+                <h2><a class="article-title" href="#">{{ note.title }}</a></h2>
+                <div class="article-metadata">
+                    <small class="article-author">{{ note.author }}, </small>
+                    <small class="article-date">{{ note.creation_date }}</small>
+                </div>
+                <p class="article-content">{{ note.content }}</p>
+            </div>
+            <a href="" class="btn button_1">Voir le code</a>
+        </article>
+        {% endfor %}
+        {% else %}
+
+    {% endif %}
+      {% if note1 %}
+        {% for note in note1 %}
+            </li>
+            <li>
+              <h2><a class="article-title" href="#">{{ note.title }}</a></h2>
+              <p>{{ note.author }}</p>
+						  <p>{{ note.content }}</p>
+              <br>
+              <a href="" class="btn button_1">Voir le code</a>
+            </li>
+        {% endfor %}
+            {% else %}
+        {% endif %}
+          {% if note2 %}
+          {% for note in note2 %}
+              </li>
+              <li>
+                <h2><a class="article-title" href="#">{{ note.title }}</a></h2>
+                <p>{{ note.author }}</p>
+                <p>{{ note.content }}</p>
+                <br>
+                <a href="" class="btn button_1">Voir le code</a>
+              </li>
+              {% endfor %}
+                {% else %}
+            {% endif %}    
+          </ul>
+        </article>
+        <aside id="sidebar">
+          <div class="dark">
+            <h3>Envoyer nous Un message</h3>
+            <form class="quote">
+  						<div>
+  							<label>Name</label><br>
+  							<input type="text" placeholder="Name">
+  						</div>
+  						<div>
+  							<label>Email</label><br>
+  							<input type="email" placeholder="Email Address">
+  						</div>
+  						<div>
+  							<label>Message</label><br>
+  							<textarea placeholder="Message"></textarea>
+  						</div>
+  						<button class="button_1" type="submit">Send</button>
+					</form>
+          </div>
+        </aside>
+      </div>
+    </section>
+{% endblock %}

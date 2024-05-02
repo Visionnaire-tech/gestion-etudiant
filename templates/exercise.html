@@ -2,25 +2,7 @@
 {% block title %}
     Résolution 
 {% endblock %}
-{% block content %}
-	{% if notes %}
-    {% for note in notes %}
-        <article class="media content-section">
-            <div class="media-body">
-                <h2><a class="article-title" href="#">{{ note.title }}</a></h2>
-                <div class="article-metadata">
-                    <small class="article-author">{{ note.author }}, </small>
-                    <small class="article-date">{{ note.creation_date }}</small>
-                </div>
-                <p class="article-content">{{ note.content }}</p>
-            </div>
-        </article>
-    {% endfor %}
-    {% else %}
-        <h3 class="alert alert-warning">Bienvenue Dans SkyblueApp {{user}}  !</h3>
-    {% endif %}
-    <a href="https://github.com/kitoko-alpha/formu/blob/master/FORMULAIRE%20L1%20INFO%20SOIR.py">Voir le code</a>
-{% endblock %}
+
 {% block footer %}
 {% endblock %}
 

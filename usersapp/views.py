@@ -5,11 +5,12 @@ from django.contrib.auth import login, authenticate ,logout
 from django.contrib import messages
 from django.contrib.auth.decorators import permission_required
 from django.contrib.auth.mixins import PermissionRequiredMixin
-from .models import TP , Etudiant ,L1lmdjour
+from .models import *
 from django.contrib import auth
 from django.contrib.auth.models import User
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.auth import password_validation
+from django.contrib.auth.decorators import login_required
 
 
 def login(request):
@@ -98,11 +99,11 @@ def register_account(request):
 
     else:
         return render(request, "registration/register.html")
-
+@login_required
 def pdf(request):
     return render(request, 'pdf.html')
 
-#
+@login_required
 def logout_user(request):			
     logout(request)
     return redirect('login')
@@ -117,10 +118,10 @@ def info(request):
 def service(request):
 	return render(request,'service.html')   
 
-@permission_required('usersapp.view_tp')
+
 def envoistp(request):
     if request.user.groups.filter(name='Paiement').exists():
-        if request.method == "POST":
+        if request.method == "POST" 'request.file':
 
             nom = request.POST.get("nom")
 

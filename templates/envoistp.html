@@ -3,16 +3,16 @@
 {% block content %}
 <h3 class="fw-bold"> {{ user.firstname }} Vérifier votre travail avant de l'envoyer </h3>
 
-<form method="post" role="form" enctype="multipart/form-data">{% csrf_token %}
+<form method="post" role="form" enctype="multipart/form-data" class="quote">{% csrf_token %}
 
   <div class="form-group">
+    <div class="col-md-6"></div>
       <label for="exampleInputName">Nom</label>
       <input required name="nom" class="form-control" id="" type="text"
              aria-describedby="nameHelp" placeholder="Entrer votre nom ">
+    </div><br>
 
-  </div>
-<br>
-  <div class="form-group">
+ 
       <div class="form-row">
           <div class="col-md-6">
               <label for="exampleInputName">Post Nom</label>
@@ -55,7 +55,7 @@
 
   <br>
 
-  <button type="submit" class="btn btn-primary btn-block">Envoyez</button>
+  <button type="submit" class="btn btn-block button_1">Envoyez</button>
 
 </form>
 
