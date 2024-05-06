@@ -23,7 +23,7 @@ def login(request):
         if request.method == "POST":
 
             # get data in form input
-            username = request.POST["nomUtilisateur"]
+            username = request.POST["nomUtilisateur1"]
             password = request.POST["password"]
 
             # get user

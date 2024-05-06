@@ -1,0 +1,9 @@
+asgiref
+backports.zoneinfo
+beautifulsoup4
+Django
+django-bootstrap4
+django-dotenv
+Pillow
+soupsieve
+sqlparse
