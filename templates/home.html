@@ -1,17 +1,22 @@
 {% extends "acc.html" %}
 {% load static %}
-{% block title %}Acceuil{% endblock %}
-{% block bodyId %} | Acceuil {% endblock %}
+{% block title %}| Acceuil{% endblock %}
 {% block content %}
   <section id="showcase">
     <div class="container">
-      <h1>Bienvenue dans IdéalApp  {{ user.last_name }} {{ user.first_name }}  {{ user.first }} </h1>
-      <p><strong>Meilleur façon d'apprendre <br> Controle en ligne , Téléchargement support et receuils des exercices</strong> </p>
+      {% for note in voir %}
+      <h1 class="bg-secondary rounded-5">Bienvenue dans <span>IdéalApp</span></h1>
+      
+      
+      
+      <p style="color:#035216;" class="fw-bold"><strong> {{ user }} {{ user.last_name }} {{ user.first_name }} {{ note.promotions }}</strong> </p>
+
+      <p style="color:#035216;"> <strong> Meilleur façon d'apprendre et de Controler en ligne , Téléchargement support et receuils des exercices </strong></p>
     </div>
   </section>
   <section id="newsletter">
     <div class="container">
-      <p>IdealApp school est une plateforme d'évaluation en ligne et qui améliorère vos connaissance intellectuelle grace à ses <a href="{% url 'pdf' %}">cours</a> et <a href="{% url 'exer' %}"><strong>exercices</strong></a>  mises en ligne .</p>
+      <p>IdealApp school est une plateforme d'évaluation en ligne et qui améliorère vos connaissance intellectuelle grace à ses <a href="{% url 'pdf' %}" style="text-decoration: none;">cours</a> et <a href="{% url 'exer' %}" style="text-decoration: none;"><strong>exercices</strong></a>  mises en ligne .</p>
       
       <br>
       <div class="">
@@ -88,9 +93,10 @@
     </section>
       
   </div>
-
+  {% endfor %}
 </div>
 
 {% endblock %}
+
 
 

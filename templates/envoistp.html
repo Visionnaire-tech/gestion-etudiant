@@ -1,62 +1,33 @@
 {% extends "acc.html" %}
-{% block title %}Envois Travail{% endblock %}
+{% block title %}| Envois Travail{% endblock %}
 {% block content %}
-<h3 class="fw-bold"> {{ user.firstname }} Vérifier votre travail avant de l'envoyer </h3>
-
-<form method="post" role="form" enctype="multipart/form-data" class="quote">{% csrf_token %}
-
-  <div class="form-group">
-    <div class="col-md-6"></div>
-      <label for="exampleInputName">Nom</label>
-      <input required name="nom" class="form-control" id="" type="text"
-             aria-describedby="nameHelp" placeholder="Entrer votre nom ">
-    </div><br>
-
- 
-      <div class="form-row">
-          <div class="col-md-6">
-              <label for="exampleInputName">Post Nom</label>
-
-              <input required name="postnom" class="form-control" id="" type="text"
-                     aria-describedby="nameHelp" placeholder="Entrer votre postnom">
-          </div><br>
-          <div class="col-md-6">
-              <label for="exampleInputLastName">Prénom</label>
-
-              <input required name="prenom" class="form-control" id="" type="text"
-                     aria-describedby="nameHelp" placeholder="Entrer votre prénom">
-          </div>
-          <br>
-          <div class="col-md-6">
-              <label for="exampleInputLastName">Promotion et vacation</label>
-
-              <select name="promotion" class="form-control" id="">
-                <option value="L1 LMD JOUR">L1 LMD JOUR</option>
-                <option value="L1 LMD SOIR">L1 LMD SOIR</option>
-                <option value="L2 LMD JOUR">L2 LMD JOUR</option>
-                <option value="L2 LMD SOIR">L2 LMD SOIR</option>
-                <option value="L3 LMD JOUR">L3 LMD JOUR</option>
-                <option value="L3 LMD SOIR">L3 LMD SOIR</option>
-                <option value="L1 SOIR">L1 SOIR</option>
-              </select>
-          </div>
-      </div>
-  </div>
 <br>
-  <div class="form-group">
-      <div class="form-row">
-          <div class="col-md-6">
-              <label for="exampleInputPassword1">Séléctionner_Votre_travail</label>
-              <input required name="travail" class="form-control" id="exampleInputPassword1"
-                     type="file">
-          </div>
-      </div>
+<br>
+<div class="h4 pb-2 mb-4 text-primary border-bottom border-primary">
+  <div class="row d-flex justify-content-center">
+    <!--Grid column-->
+    
+    <div class="col-auto">
+      <h5 class="pt-2">
+        <strong>Vérifier votre travail avant de l'envoyer </strong>
+      </h5>
+    </div>
   </div>
+</div> 
 
-  <br>
 
-  <button type="submit" class="btn btn-block button_1">Envoyez</button>
+<div class="row d-flex justify-content-center">
+  <div class="col-auto">
+    <form method="post" role="form" enctype="multipart/form-data">
 
-</form>
+      <div class="form-group">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Save</button>
+      </div>
+    
+    </form>
+  </div>
+</div>
 
 {% endblock %}

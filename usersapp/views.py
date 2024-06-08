@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect , HttpResponse, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm
-from usersapp.forms import UserRegistrationForm , TPS , Forml1lmdjour
+from usersapp.forms import *
 from django.contrib.auth import login, authenticate ,logout
 from django.contrib import messages
 from django.contrib.auth.decorators import permission_required
@@ -11,6 +11,39 @@ from django.contrib.auth.models import User
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.auth import password_validation
 from django.contrib.auth.decorators import login_required
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from .serializers import CategorySerializer
+
+
+
+@login_required
+def home(request):
+    context ={
+	'voir': Etudiant.objects.filter(),
+    }
+    return render(request, 'home.html',context)
+             
+@login_required	
+def exer(request):
+    context ={
+	'notes': Note.objects.filter(),
+    'note1': Note1.objects.filter(),
+    'note2': Note2.objects.filter()
+	}
+    return render(request, 'service.html',context)
+# Create your views here.
+@api_view()
+def produit_list(request):
+    queryset = Etudiant.objects.all()
+    serializer = CategorySerializer(queryset,many=True)
+    return Response(serializer.data)
+
+@api_view()
+def produit_detail(request,id):
+    produit = get_object_or_404(Etudiant,pk=id)
+    serializer = CategorySerializer(produit)
+    return Response(serializer.data)
 
 
 def login(request):
@@ -118,30 +151,16 @@ def info(request):
 def service(request):
 	return render(request,'service.html')   
 
-
 def envoistp(request):
-    if request.user.groups.filter(name='Paiement').exists():
-        if request.method == "POST" 'request.file':
-
-            nom = request.POST.get("nom")
-
-            postnoms = request.POST.get("postnom")
-
-            prenoms = request.POST.get("prenom")
-
-            promotion = request.POST.get("promotion")
-
-            travail = request.POST.get("travail")
-
-            if L1lmdjour.objects.filter(Nom=nom).exists():
-                messages.error(request, "Désolé votre Travail été déjà envoyé")
-                return redirect('envoistp')
-
-            Forml1lmdjour = L1lmdjour.objects.create(Nom=nom, Postnom=postnoms, Prenom=prenoms, Promotion=promotion,  Séléctionner_Votre_travail=travail)
-            Forml1lmdjour.save()
-            return redirect('home')
-
+    if request.user.groups.filter(name='paiement').exists():
+        if request.method == 'POST':
+            form = Forml1lmdjour(request.POST, request.FILES)
+            if form.is_valid():
+                form.save()
+                return redirect('/')
         else:
-            return render(request, "envoistp.html")
+            form = Forml1lmdjour()
+            # pointer vers le fichier du template index.html
+            return render(request, 'envoistp.html' , {'form': form})
     else:
          return render(request,'conf.html')

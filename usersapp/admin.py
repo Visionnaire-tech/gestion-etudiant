@@ -12,4 +12,6 @@ admin.site.register(Etudiant,EtudiantModelAdmin)
 admin.site.register(L1lmdjour,L1lmdjourModelAdmin)
 admin.site.register(TP)
 
-
+admin.site.register(Note)
+admin.site.register(Note1)
+admin.site.register(Note2)

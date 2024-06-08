@@ -1,8 +1,10 @@
 {% extends "acc.html" %}
 {% load static %}
-{% block title %}Acceuil{% endblock %}
+{% block title %}| Résolutions {% endblock %}
 {% block bodyId %} | Acceuil {% endblock %}
 {% block content %}
+<br>
+<br>
     <section id="main">
       <div class="container">
         <article id="main-col">
@@ -13,7 +15,7 @@
     {% for note in notes %}
         <article class="media content-section">
             <div class="media-body">
-                <h2><a class="article-title" href="#">{{ note.title }}</a></h2>
+                <h2><a class="article-title" href="#" style="text-decoration: none;">{{ note.title }}</a></h2>
                 <div class="article-metadata">
                     <small class="article-author">{{ note.author }}, </small>
                     <small class="article-date">{{ note.creation_date }}</small>
@@ -30,7 +32,7 @@
         {% for note in note1 %}
             </li>
             <li>
-              <h2><a class="article-title" href="#">{{ note.title }}</a></h2>
+              <h2><a class="article-title" href="#" style="text-decoration: none;">{{ note.title }}</a></h2>
               <p>{{ note.author }}</p>
 						  <p>{{ note.content }}</p>
               <br>
@@ -43,7 +45,7 @@
           {% for note in note2 %}
               </li>
               <li>
-                <h2><a class="article-title" href="#">{{ note.title }}</a></h2>
+                <h2><a class="article-title" href="#" style="text-decoration: none;">{{ note.title }}</a></h2>
                 <p>{{ note.author }}</p>
                 <p>{{ note.content }}</p>
                 <br>

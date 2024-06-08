@@ -1,20 +1,25 @@
 {% extends "acc.html" %}
 {% load static %}
 {% block title %}
-    Download
+| Download
 {% endblock %}
 {% block content %}
-<section id="showcase">
-  <div class="container">
-    <h4>Télécharger le support du cours gratuitement dans IdealApp </h4>
-    <p> Le support mise à la disposition des étudiants pour l'amelioration de leur connaissance professionnelle .</p>
-    <p>Booster vos compétences dans la programmation web et mobile en visitant le site officiel du <a href="#"><strong>Skyblue technology</strong></a></p>
+<section class="home" id="home">
+  <div class="row">
+    <div class="content rounded-5">
+      <h3>Télécharger le support du cours gratuitement dans <span>IdealApp</span> </h3>
+      <p>Le support mise à la disposition des étudiants pour l'amelioration de leur connaissance professionnelle</p>
+    </div>
+    <div class="image">
+      <img src="{% static 'assets/img/logo id.png' %}" alt="">
+    </div>
   </div>
 </section>
-
-
+<br>
 <section id="boxes">
     <div class="container">
+      <h2 style="text-align: center;">Cours à Télécharger </h2>
+      <br>
       <div class="box">
         <img src="{% static 'assets/img/4.jpg' %}">
         <h3>Cour python</h3>
@@ -24,26 +29,26 @@
 
       </div>
       <div class="box">
-        <img src="{% static 'assets/img/wamp.png' %}">
+        <img src="">
         <br>
         <br>
 
         <h3>Mises à Jour d'un système informatique</h3>
         <p class="card-text"><strong>L3 LMD Jour et Soir</strong></p>
 
-        <p>Téléchargez la nouvelle version du python gratuitement pour la création de vos bases de données.</p>
+        <p>Dévenez expert sur la structure et le mises à jour d'un système informatiser .</p>
         <a href="{% static 'pdf/api_python.docx' %}" class="btn btn-primary" download="Cour de la programmation python.docx">Download </a>
 
       </div>
       <div class="box">
-        <img src="{% static 'assets/img/pyc.jpeg' %}">
+        <img src="">
         <br>
         <br>
 
-        <h3>Pycharm</h3>
-        <br>
+        <h3>Conception</h3>
+        <p class="card-text"><strong>L1 Soir</strong></p>
 
-        <p>Téléchargez Une environnement puissante et idéal de python gratuitement pour la réalisation de vos projet.</p>
+        <h5 style="color: brown;" >Non disponible</h5>
         <a href="{% static 'pdf/api_python.docx' %}" class="btn btn-primary" download="Cour de la programmation python.docx">Download </a>
 
       </div>

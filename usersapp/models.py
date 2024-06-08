@@ -5,6 +5,31 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 # Create your models here.
 
+class Note(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+    author = models.CharField(max_length=100)
+	
+    def __str__(self):
+        return self.title
+    
+class Note1(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+    author = models.CharField(max_length=100)
+	
+    def __str__(self):
+        return self.title
+    
+class Note2(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+    author = models.CharField(max_length=100)
+	
+    def __str__(self):
+        return self.title
+
+
 class Etudiant(models.Model):
     user = models.OneToOneField('auth.User', related_name='etudiant',on_delete= models.CASCADE)
 
